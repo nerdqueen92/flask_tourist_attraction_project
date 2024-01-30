@@ -29,6 +29,7 @@ This project consists of several files:
 ### Templates
 
 - **base.html**: Template header file that the main template file will inherit from. It provides the structure for the web pages.
+- **locations.html**: This template file displays the tourist attraction data. It inherits from `base.html` and contains the layout for the application's pages.
 
 ### Data
 
@@ -44,10 +45,6 @@ This project consists of several files:
   - `locations()`: The main route that displays content associated with each category of location. It handles changing categories and location deletion.
   - `add_location()`: A form handling route that processes the add location form and redirects back to the `locations()` route.
   - `index()`: This route maps to the same path as `locations()` but without a category variable. It automatically redirects to the recommended page of the `locations()` route.
-
-### Templates
-
-- **locations.html**: This template file displays the tourist attraction data. It inherits from `base.html` and contains the layout for the application's pages.
 
 ### Forms
 
