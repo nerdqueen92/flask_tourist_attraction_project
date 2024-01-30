@@ -16,6 +16,7 @@ With Tourist Attractions, you can easily move locations between categories, remo
 - [Getting Started](#getting-started)
 - [How to Use](#how-to-use)
 - [Contributing](#contributing)
+- [Acknowledgements](#acknowledgements)
 - [License](#license)
 
 ## Project Files
@@ -65,7 +66,7 @@ Before you begin, feel free to explore each file to understand its role in the p
 
 Contributions to this project are welcome! Feel free to open issues, submit pull requests, or provide feedback to improve the application.
 
-### Acknowledgements
+## Acknowledgements
 
 This project is part of the **"Build Python Web Apps with Flask Skill Path"** course offered by **Codecademy**. I created this application with guidance and inspiration from the **Codecademy** course materials. Special thanks to **Codecademy** for their valuable resources and instruction in web app development using Flask.
 
