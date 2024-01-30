@@ -37,7 +37,7 @@ This project consists of several files:
 
 ### Modules
 
-- **location.py**: This module contains the Locations class, which our application uses to add, modify, and delete location data. The Locations class provides three methods: `add()`, `moveup()`, and `delete()` for these operations.
+- **locations.py**: This module contains the Locations class, which our application uses to add, modify, and delete location data. The Locations class provides three methods: `add()`, `moveup()`, and `delete()` for these operations.
 
 ### Flask Application
 
