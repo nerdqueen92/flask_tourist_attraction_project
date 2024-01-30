@@ -28,8 +28,8 @@
             <!-- start if statement here -->
           {% if template_category in ['recommended','tovisit'] %}
             <form method="POST">
-              <input type="submit" class="up" name="{{ location.name }}_up" value=&#8599;> <!-- set name attribute here -->
-              <input type="submit" class="del" name="{{ location.name }}_del" value="X"> <!-- set name attribute here -->
+              <input type="submit" class="up" name="{{ location.name }}" value=&#8599;> <!-- set name attribute here -->
+              <input type="submit" class="del" name="{{ location.name }}" value="X"> <!-- set name attribute here -->
             </form>
             <!-- end if statement here -->
           {% endif %}
@@ -39,37 +39,37 @@
       {% endfor %}
     </tbody>
   </table>
-
-<!--  <form class="addform" action="" method="POST"> &lt;!&ndash; set action attribute here &ndash;&gt;-->
-<!--    &lt;!&ndash; call hidden_tag() here &ndash;&gt;-->
-
-<!--    <table>-->
-<!--      <colgroup>-->
-<!--        <col style="width: 40%">-->
-<!--        <col style="width: 40%">-->
-<!--        <col style="width: 20%">-->
-<!--      </colgroup>-->
-<!--      <tbody>-->
-<!--        <tr>-->
-<!--          <td></td> &lt;!&ndash; insert location name label here &ndash;&gt;-->
-<!--          <td></td> &lt;!&ndash; insert location description label here &ndash;&gt;-->
-<!--          <td></td> &lt;!&ndash; insert location category label here &ndash;&gt;-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td></td> &lt;!&ndash; insert add_location name here &ndash;&gt;-->
-<!--          <td></td> &lt;!&ndash; insert add_location description here &ndash;&gt;-->
-<!--          <td>-->
-<!--            &lt;!&ndash; begin for loop here &ndash;&gt;-->
-
-<!--              <div></div> &lt;!&ndash; insert button here &ndash;&gt;-->
-<!--            &lt;!&ndash; end for loop here &ndash;&gt;-->
-
-<!--          </td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td></td> &lt;!&ndash; insert submit here &ndash;&gt;-->
-<!--        </tr>-->
-<!--      </tbody>-->
-<!--    </table>-->
-<!--  </form>-->
+  <h2>Please tell us what else you want to add to the list</h2>
+  <form class="addform" action="{{ url_for('add_location') }}" method="POST"> <!-- set action attribute here -->
+    <!-- call hidden_tag() here -->
+    {{ add_location.hidden_tag() }}
+    <table>
+      <colgroup>
+        <col style="width: 40%">
+        <col style="width: 40%">
+        <col style="width: 20%">
+      </colgroup>
+      <tbody>
+        <tr>
+          <td>{{ add_location.name.label }}</td> <!-- insert location name label here -->
+          <td>{{ add_location.description.label }}</td> <!-- insert location description label here -->
+          <td>{{ add_location.category.label }}</td> <!-- insert location category label here -->
+        </tr>
+        <tr>
+          <td>{{ add_location.name }}</td> <!-- insert add_location name here -->
+          <td>{{ add_location.description }}</td> <!-- insert add_location description here -->
+          <td>
+            <!-- begin for loop here -->
+            {% for button in add_location.category %}
+              <div>{{ button }} {{ button.label }}</div> <!-- insert button here -->
+            <!-- end for loop here -->
+            {% endfor %}
+          </td>
+        </tr>
+        <tr>
+          <td>{{ add_location.submit }}</td> <!-- insert submit here -->
+        </tr>
+      </tbody>
+    </table>
+  </form>
 {% endblock %}
